@@ -3,7 +3,7 @@ import tkinter as tk
 import tkinter.ttk as ttk
 root = tk.Tk()
 root.title("My investment")
-wb = pyxl.load_workbook("C:\\Users\\Amed shafique\\Dropbox\\Personal work\\Programming files\\Codes\\Python\\Creations\\Investments\\try.xlsx")
+wb = pyxl.load_workbook("try.xlsx")
 sh = wb['Investments']
 inv = tk.Label (root,text ="Investment:",font = ("Times New Roman" , 14))
 inv.grid(row = 0 , column = 0)
@@ -66,7 +66,7 @@ def show_calc():
 bt_proceed = tk.Button(root,text = "Proceed",font = ('Times New Roman',14), command = show_calc)
 bt_proceed.grid(row=3,column = 7)
 
-wb.save("C:\\Users\\Amed shafique\\Dropbox\\Personal work\\Programming files\\Codes\\Python\\Creations\\Investments\\try.xlsx")
+wb.save("try.xlsx")
 wb.close()
 root.geometry('700x500')
 
