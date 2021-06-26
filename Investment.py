@@ -66,7 +66,7 @@ def show_calc():
     sh.cell(row = last_row,column = 6, value =  matamt)
 
 
-@show_calc()
+
 def present():
 
     show_sheet = Tk()
@@ -91,9 +91,12 @@ def present():
     sheet_treeview.heading('interest_amt', text='Interest Total Amount', anchor=E)
     sheet_treeview.heading('matamt', text='Maturity Amount', anchor=E)
 
-    sheet_treeview.insert(parent='', index='end', iid=0, values=())
+    for rows in sh.iter_rows(min_row=5, min_col=0):
+        for cell in rows:
+            sheet_treeview.insert(parent='', index='end', iid=0, values=(cell.value for cell in rows))
+            sheet_treeview.pack(pady=20)
 
-
+    show_sheet.mainloop()
 
 
 
